@@ -3,6 +3,15 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-/ETwoFR/D50bfJMSgPUkPl1FVPcuTddwQ9zVnRrAb44=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com; font-src 'self'; connect-src 'self' https://api.web3forms.com https://www.google-analytics.com https://region1.google-analytics.com; frame-src 'self' https://www.google.com https://maps.google.com; form-action 'self' https://api.web3forms.com; frame-ancestors 'self'; upgrade-insecure-requests
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
