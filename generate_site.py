@@ -45,14 +45,23 @@ BASE=ENV.from_string('''<!doctype html>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title }} | Digitron d.o.o. Buje</title>
 <meta name="description" content="{{ description }}"><meta name="theme-color" content="#102239"><meta name="robots" content="noindex,nofollow">
-<link rel="canonical" href="https://digitron.hr/{{ slug }}"><link rel="icon" type="image/svg+xml" href="assets/graphics/brand-mark.svg">
+<link rel="canonical" href="https://digitron.hr/{{ slug }}"><link rel="icon" type="image/svg+xml" href="assets/graphics/digitron-logo.svg">
 <meta property="og:type" content="website"><meta property="og:locale" content="hr_HR"><meta property="og:title" content="{{ title }} | Digitron"><meta property="og:description" content="{{ description }}"><meta property="og:url" content="https://digitron.hr/{{ slug }}">
+<script>try{if(!sessionStorage.getItem('digitron_intro_seen_v2')&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('intro-active');sessionStorage.setItem('digitron_intro_seen_v2','1')}}catch(e){}</script>
+<link rel="preload" as="image" href="assets/graphics/digitron-logo.svg">
 <link rel="stylesheet" href="assets/css/style.css">
 <script type="application/ld+json">{{ json_ld | safe }}</script>
 </head><body>
+<div class="brand-intro" id="brand-intro" aria-hidden="true">
+  <div class="brand-intro__inner">
+    <div class="brand-intro__mark"><img src="assets/graphics/digitron-logo.svg" alt="" width="520" height="166" fetchpriority="high"></div>
+    <div class="brand-intro__subtitle">BUJE <span aria-hidden="true">·</span> OD 1971.</div>
+  </div>
+  <button class="brand-intro__skip" type="button" id="skip-intro" aria-label="Preskoči uvodnu animaciju">Preskoči</button>
+</div>
 <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
 <div class="topstrip"><div class="container topstrip__inner"><div><span>Digitronska 33, 52460 Buje</span><span>Pon–pet: 07:30–15:30</span></div><div class="topstrip__right"><a href="tel:+38552702800">+385 52 702 800</a><a href="mailto:prodaja@digitron.hr">prodaja@digitron.hr</a></div></div></div>
-<div class="header-wrap"><div class="container header"><a class="logo" href="index.html" aria-label="Digitron – početna"><img class="logo__symbol" src="assets/graphics/brand-mark.svg" width="38" height="38" alt=""><span><span class="logo__word">digitron</span><span class="logo__sub">Buje · od 1971.</span></span></a>
+<div class="header-wrap"><div class="container header"><a class="logo" href="index.html" aria-label="Digitron – početna"><img class="logo__image" src="assets/graphics/digitron-logo.svg" width="175" height="58" alt="Digitron" decoding="async"></a>
 <nav id="main-navigation" class="navigation" aria-label="Glavna navigacija">
 <a href="index.html" {% if slug=='index.html' %}class="active" aria-current="page"{% endif %}>Početna</a>
 <a href="digitron.html" {% if slug=='digitron.html' %}class="active" aria-current="page"{% endif %}>O nama</a>
@@ -65,7 +74,7 @@ BASE=ENV.from_string('''<!doctype html>
 <main id="sadrzaj">{{ content|safe }}</main>
 <section class="section section--sm contact-band"><div class="container contact-band__inner"><div><span class="kicker">Trebate pomoć pri odabiru?</span><h2>Razgovarajmo o vašim potrebama.</h2><p>Prodaja, stručna podrška, servis i ovjera vaga na jednom mjestu.</p></div><a class="btn btn--white btn--arrow" href="kontakt.html#upit">Pošaljite upit</a></div></section>
 <footer class="footer"><div class="container"><div class="footer__grid">
-<div><a class="logo" href="index.html"><img class="logo__symbol" src="assets/graphics/brand-mark.svg" width="38" height="38" alt=""><span><span class="logo__word">digitron</span><span class="logo__sub">Buje · od 1971.</span></span></a><p style="margin-top:22px;max-width:300px">Elektroničke vage, fiskalne blagajne, klimatizacija, rasvjeta i stručna tehnička podrška.</p></div>
+<div><a class="logo" href="index.html"><img class="logo__image" src="assets/graphics/digitron-logo.svg" width="175" height="58" alt="Digitron" decoding="async"></a><p style="margin-top:22px;max-width:300px">Elektroničke vage, fiskalne blagajne, klimatizacija, rasvjeta i stručna tehnička podrška.</p></div>
 <div><h3>Tvrtka</h3><ul><li><a href="digitron.html">O nama</a></li><li><a href="proizvodi-digitron.html">Proizvodi</a></li><li><a href="prodaja.html">Prodaja</a></li><li><a href="servis.html">Servis</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
 <div><h3>Proizvodi i usluge</h3><ul><li><a href="vage.html">Elektroničke vage</a></li><li><a href="ovjera-vaga.html">Ovjera vaga</a></li><li><a href="fiskalne-blagajne.html">Fiskalne blagajne</a></li><li><a href="klimatizacija.html">Klimatizacija</a></li><li><a href="pelet-peci.html">Peći na pelet</a></li><li><a href="led-rasvjeta.html">LED rasvjeta</a></li></ul></div>
 <div><h3>Kontakt</h3><ul><li>Digitron d.o.o.</li><li>Digitronska 33, 52460 Buje</li><li><a href="tel:+38552702800">+385 52 702 800</a></li><li><a href="mailto:prodaja@digitron.hr">prodaja@digitron.hr</a></li><li>Radno vrijeme: pon–pet 07:30–15:30</li></ul></div>

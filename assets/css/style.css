@@ -5,3 +5,37 @@
 @media(max-width:670px){body{font-size:15px}.container{width:calc(100% - 34px)}.header-wrap{padding:8px 0}.header{min-height:56px}.navigation{top:72px;height:calc(100dvh - 72px)}.logo__symbol{width:33px;height:33px}.logo__word{font-size:1.75rem}.logo__sub{font-size:.49rem}.hero{padding:56px 0 48px;min-height:0}.hero h1{font-size:clamp(2.65rem,12vw,3.85rem);line-height:1.08}.hero__copy p{font-size:1rem}.hero__actions{margin-top:27px}.hero__actions .btn{flex:1}.hero__visual{min-height:280px;margin-top:16px}.hero__visual-main{aspect-ratio:1.35;border-radius:17px}.hero__visual-caption{padding:13px 16px;width:175px;bottom:-16px}.hero__visual-caption strong{font-size:1.34rem}.hero__visual-caption span{font-size:.69rem}.stats{grid-template-columns:repeat(3,1fr)}.stats__item{padding:23px 6px}.stats__num{font-size:1.68rem}.stats__label{font-size:.69rem;line-height:1.4}.section{padding:68px 0}.section--sm{padding:53px 0}.section-head{display:block}.section-head p{margin-top:18px}.grid--3,.grid--4,.grid--2,.feature-grid,.split,.product-layout,.footer__grid,.form__row,.timeline{grid-template-columns:1fr}.service-card__image{height:210px}.service-card__body p{min-height:0}.feature{padding:25px}.media-panel,.media-panel--portrait{min-height:325px}.split--reverse>div:first-child{order:0}.contact-band__inner{display:block}.contact-band .btn{margin-top:24px}.footer__grid{gap:30px}.footer__bottom{display:block;line-height:2}.page-hero{padding:54px 0 64px}.page-hero h1{font-size:clamp(2.5rem,10vw,3.5rem)}.breadcrumbs{margin-bottom:24px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product__image{height:160px}.product__content{padding:13px}.product h3{font-size:.97rem}.product p{font-size:.75rem}.product__label{font-size:.63rem}.filter-panel{position:static}.floating-contact{display:none}.mobile-cta{position:fixed;display:flex;left:0;right:0;bottom:0;padding:10px 13px calc(10px + env(safe-area-inset-bottom));gap:8px;background:#fff;box-shadow:0 -7px 28px #0c1f3d1b;z-index:100}.mobile-cta a{flex:1;text-align:center;min-height:42px}.footer{padding-bottom:105px}.cookie{bottom:76px;left:10px;right:10px;max-width:none;padding:17px}.cookie p{font-size:.79rem}.cookie.is-visible~.floating-contact{bottom:20px}.map-container{aspect-ratio:1.15}.source-note{font-size:.74rem}}
 @media(max-width:420px){.hero__actions{flex-direction:column}.product-grid{grid-template-columns:1fr}.product__image{height:215px}.logo__word{font-size:1.57rem}.hero__visual-caption{bottom:-13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+
+/* V2 – brand logo on every page: visual trace of the original corporate mark. */
+.logo{display:inline-flex;align-items:center;flex-shrink:0;min-width:0}
+.logo__image{display:block;width:175px;height:auto;max-width:100%;object-fit:contain}
+.footer .logo__image{width:188px;filter:drop-shadow(0 1px 0 rgba(255,255,255,.07))}
+@media(max-width:970px){.logo__image{width:166px}}
+@media(max-width:670px){.logo__image{width:150px}.header{gap:12px}}
+@media(max-width:370px){.logo__image{width:137px}}
+/* Elegant two-second intro: clean, brand-focused, with accessible skip. */
+.brand-intro{display:none}
+html.intro-active{overflow:hidden}
+html.intro-active .brand-intro{
+ display:grid;place-items:center;position:fixed;inset:0;z-index:2000;
+ background:radial-gradient(ellipse 75% 62% at 50% 47%,#fff 8%,#f8fafd 100%);
+ color:#20324e;overflow:hidden;isolation:isolate;
+ animation:digitron-intro-out .54s cubic-bezier(.7,0,.3,1) 2.05s both;
+}
+.brand-intro__inner{width:min(540px,82vw);display:flex;flex-direction:column;align-items:center;transform:translateY(-4%)}
+.brand-intro__mark{width:min(455px,78vw);transform:translateY(12px) scale(.965);opacity:0;filter:blur(8px);
+ animation:digitron-logo-in .95s cubic-bezier(.2,.7,.2,1) .16s both}
+.brand-intro__mark img{width:100%;height:auto;object-fit:contain}
+.brand-intro__subtitle{font-family:Inter,'Segoe UI',Arial,sans-serif;color:#7b899d;letter-spacing:.32em;
+ font-size:clamp(.65rem,.95vw,.8rem);font-weight:650;margin-top:8px;text-align:center;opacity:0;
+ animation:digitron-sub-in .7s ease .8s both}
+.brand-intro__skip{position:absolute;bottom:clamp(28px,6vh,64px);right:clamp(24px,5vw,72px);
+ border:0;background:transparent;padding:9px;color:#66768b;font-size:.76rem;letter-spacing:.04em;
+ opacity:0;animation:digitron-sub-in .65s ease 1s both}
+.brand-intro__skip:hover,.brand-intro__skip:focus-visible{color:#213e74;text-decoration:underline;text-underline-offset:4px}
+@keyframes digitron-logo-in{to{transform:translateY(0) scale(1);filter:blur(0);opacity:1}}
+@keyframes digitron-sub-in{to{opacity:1}}
+@keyframes digitron-intro-out{to{opacity:0;visibility:hidden;pointer-events:none}}
+@media(prefers-reduced-motion:reduce){html.intro-active{overflow:auto}html.intro-active .brand-intro{display:none}}
+
+.footer .logo{background:#fff;border-radius:10px;padding:5px 13px 5px 9px;width:max-content;max-width:100%;box-shadow:0 6px 18px rgba(0,0,0,.08)}

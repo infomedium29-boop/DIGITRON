@@ -77,3 +77,15 @@ KAKO PREGLEDATI WEB
 
 Materijal je radni demo i nije namijenjen objavi preko postojeće domene
 prije dogovora s vlasnikom i svih navedenih provjera.
+
+
+VERZIJA V2 – LOGOTIP I UVODNA ANIMACIJA
+- Novi logo: assets/graphics/digitron-logo.svg (vektorski PRECRTAN prema originalu
+  vidljivom na službenom Digitron PDF cjeniku; nije izvorni originalni SVG).
+- Za 100 % izvorni logo zamijeniti tu datoteku originalom iz tvrtke,
+  zadržati isti naziv i SVG format ili uskladiti putanje i MIME tip.
+- Intro traje približno 2,6 s i prikazuje se jednom po kartici/sesiji.
+- Preskoči intro: desni donji kut ili tipka Escape.
+- Za posjetitelje s reduciranim animacijama intro je isključen.
+- Header i footer koriste isti SVG; zamjena jedne datoteke mijenja sve stranice.
+- Ne objavljivati javno bez suglasnosti tvrtke, provjere obrazaca i slika.

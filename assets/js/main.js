@@ -1,5 +1,17 @@
 (()=>{'use strict';
  const $=(s,ctx=document)=>ctx.querySelector(s),$$=(s,ctx=document)=>[...ctx.querySelectorAll(s)];
+ // Intro: session-scoped, removable, with an explicit skip action.
+ const intro=$('#brand-intro');
+ if(intro){
+  let finished=false;
+  const finish=()=>{if(finished)return;finished=true;document.documentElement.classList.remove('intro-active');intro.remove()};
+  $('#skip-intro')?.addEventListener('click',finish);
+  document.addEventListener('keydown',(event)=>{if(event.key==='Escape'&&document.documentElement.classList.contains('intro-active'))finish()});
+  if(document.documentElement.classList.contains('intro-active')){
+    window.setTimeout(finish,2670);
+    intro.addEventListener('animationend',event=>{if(event.target===intro)finish()},{once:true});
+  }else{finish()}
+ }
  const menu=$('#menu-toggle'),nav=$('#main-navigation');
  if(menu&&nav){const toggle=(open)=>{nav.classList.toggle('is-open',open);document.body.classList.toggle('menu-open',open);menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'✕':'☰'};menu.addEventListener('click',()=>toggle(!nav.classList.contains('is-open')));$$('a',nav).forEach(a=>a.addEventListener('click',()=>toggle(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle(false)})}
  const dialog=$('#cookie-dialog'),accept=$('#accept-cookies'),reject=$('#reject-cookies');
