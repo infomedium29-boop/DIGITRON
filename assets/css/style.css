@@ -174,3 +174,6 @@ html.intro-active .brand-intro{display:grid;place-items:center;background:#fff;a
 @media (max-width:900px){.hero--editorial .hero__grid{grid-template-columns:1fr;gap:36px}.hero--editorial{padding:65px 0 74px}.hero--editorial .hero__visual-main{aspect-ratio:1.52}.hero--editorial .hero__visual-caption{right:0}.photo-feature__media{height:300px}}
 @media (max-width:600px){.hero--editorial .hero__copy h1{font-size:clamp(2.6rem,9.2vw,4rem)}.hero--editorial .hero__copy p{font-size:.98rem}.hero--editorial .hero__visual-main{aspect-ratio:1.1}.hero--editorial .hero__visual-caption{max-width:90%}.photo-showcase__grid{grid-template-columns:1fr}.service-card__image{height:218px}.photo-feature{margin-top:22px}}
 @media (prefers-reduced-motion:reduce){html.intro-active .brand-intro{display:none!important}.brand-intro__mark,.brand-intro__subtitle,.brand-intro__mark:after{animation:none!important}}
+
+/* V6: removed decorative microheadings (kicker, eyebrow and product labels). */
+.hero--editorial .hero__copy h1{margin-top:0}
