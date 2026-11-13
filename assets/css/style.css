@@ -188,7 +188,7 @@ html.intro-active .brand-intro{display:grid;place-items:center;background:#fff;a
   margin: 0 0 26px;
   text-wrap: balance;
 }
-.hero__headline > span {display: block;}
+/* Naslov je jedinstven tekst; preglednik sam prelama riječi uz stvarne razmake. */
 @media (max-width: 900px) {
   .hero--editorial .hero__copy h1.hero__headline {
     font-size: clamp(3rem, 5.4vw, 4rem);
@@ -205,6 +205,6 @@ html.intro-active .brand-intro{display:grid;place-items:center;background:#fff;a
 }
 @media (max-width: 380px) {
   .hero--editorial .hero__copy h1.hero__headline {
-    font-size: clamp(2.25rem, 9vw, 2.6rem);
+    font-size: clamp(2.2rem, 9vw, 2.5rem);
   }
 }
