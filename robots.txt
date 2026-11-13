@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://digitron.hr/sitemap.xml

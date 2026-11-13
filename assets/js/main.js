@@ -1,0 +1,18 @@
+(()=>{'use strict';
+ const $=(s,ctx=document)=>ctx.querySelector(s),$$=(s,ctx=document)=>[...ctx.querySelectorAll(s)];
+ const menu=$('#menu-toggle'),nav=$('#main-navigation');
+ if(menu&&nav){const toggle=(open)=>{nav.classList.toggle('is-open',open);document.body.classList.toggle('menu-open',open);menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'✕':'☰'};menu.addEventListener('click',()=>toggle(!nav.classList.contains('is-open')));$$('a',nav).forEach(a=>a.addEventListener('click',()=>toggle(false)));document.addEventListener('keydown',e=>{if(e.key==='Escape')toggle(false)})}
+ const dialog=$('#cookie-dialog'),accept=$('#accept-cookies'),reject=$('#reject-cookies');
+ const consentKey='digitron_preview_cookie_choice_v1';
+ if(dialog){try{if(!localStorage.getItem(consentKey)){dialog.classList.add('is-visible');dialog.setAttribute('aria-hidden','false')}}catch(e){dialog.classList.add('is-visible')}}
+ const consent=(v)=>{try{localStorage.setItem(consentKey,v)}catch(e){}if(dialog){dialog.classList.remove('is-visible');dialog.setAttribute('aria-hidden','true')}};
+ if(accept)accept.addEventListener('click',()=>consent('accepted'));if(reject)reject.addEventListener('click',()=>consent('rejected'));
+ $$('[data-cookie-settings]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();if(dialog){dialog.classList.add('is-visible');dialog.setAttribute('aria-hidden','false')}}));
+ const cards=$$('[data-product]'),filter=$('#product-filter'),q=$('#product-search'),counter=$('#product-count'),empty=$('#no-results');
+ const runFilter=()=>{const category=filter?.value||'all',term=(q?.value||'').trim().toLocaleLowerCase('hr');let n=0;cards.forEach(c=>{const match=(category==='all'||c.dataset.group===category)&&(!term||c.dataset.search.toLocaleLowerCase('hr').includes(term));c.hidden=!match;if(match)n++});if(counter)counter.textContent=String(n);if(empty)empty.style.display=n?'none':'block'};
+ if(filter)filter.addEventListener('change',runFilter);if(q)q.addEventListener('input',runFilter);if(cards.length)runFilter();
+ const requestedCategory=new URLSearchParams(window.location.search).get('vrsta');const purposeSelect=$('#vrsta');if(purposeSelect&&requestedCategory&&[...purposeSelect.options].some(o=>o.value===requestedCategory))purposeSelect.value=requestedCategory;
+ const form=$('#contact-form');if(form){form.addEventListener('submit',ev=>{ev.preventDefault();const data=new FormData(form),purpose=String(data.get('vrsta')||'Opći upit'),target=purpose==='Servis'||purpose==='Ovjera vaga'?'servis@digitron.hr':'prodaja@digitron.hr';const subject=`Upit s web stranice Digitron — ${purpose}`;const body=[`Vrsta upita: ${purpose}`,`Ime: ${data.get('ime')||''}`,`Tvrtka: ${data.get('tvrtka')||''}`,`E-mail: ${data.get('email')||''}`,`Telefon: ${data.get('telefon')||''}`,'',String(data.get('poruka')||'')].join('\n');window.location.href=`mailto:${target}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;const info=$('#form-feedback');if(info)info.textContent='Otvara se vaš e-mail program s pripremljenom porukom. Upit nije poslan dok ga ne potvrdite u e-mail programu.'})}
+ const reveal=$$('.reveal');if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}})},{threshold:.07});reveal.forEach(el=>io.observe(el))}else{reveal.forEach(el=>el.classList.add('is-visible'))}
+ $$('img[data-image-fallback]').forEach(img=>{img.addEventListener('error',()=>{img.style.display='none';img.parentElement?.classList.add('image-loading')},{once:true})});
+})();

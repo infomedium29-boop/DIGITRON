@@ -1,0 +1,54 @@
+{
+  "tvrtka": "Digitron d.o.o.",
+  "adresa": "Digitronska 33, 52460 Buje, Hrvatska",
+  "godina_osnivanja": 1971,
+  "oib": "84493255348",
+  "tel": "+385 52 702 800",
+  "radno_vrijeme": "Pon–pet 07:30–15:30",
+  "prodaja": "prodaja@digitron.hr",
+  "servis": "servis@digitron.hr",
+  "glavne_kategorije": [
+    "Elektroničke vage",
+    "Fiskalne blagajne",
+    "Ovjera vaga",
+    "LED rasvjeta",
+    "Peći na pelet",
+    "Klimatizacija",
+    "Rezervni dijelovi"
+  ],
+  "modeli_fiskalnih_blagajni_prikazani_na_starom_webu": [
+    "D110",
+    "D115",
+    "D120",
+    "D130",
+    "D150"
+  ],
+  "slike": {
+    "factory": "https://digitron.hr/images/zgrada-pogon-digitron.jpg",
+    "jwp_hero": "https://digitron.hr/images/vaga-di-scala-JWP.jpg",
+    "ls2_hero": "https://digitron.hr/images/vaga-LS2-slider.jpg",
+    "forklift_hero": "https://digitron.hr/images/vaga-vilicar-slider.jpg",
+    "cash_d110_hero": "https://digitron.hr/images/fiskalna-registar-blagajna-D110.jpg",
+    "cash_d130_hero": "https://digitron.hr/images/fiskalna-registar-blagajna-D130.jpg",
+    "led_hero": "https://digitron.hr/images/granada-2.jpg",
+    "sky": "https://digitron.hr/images/sky-digitron-buje.jpg",
+    "retro800": "https://digitron.hr/images/retro-digitron-1.jpg",
+    "retro_factory": "https://digitron.hr/images/retro-digitron-2.jpg",
+    "retro812": "https://digitron.hr/images/retro-digitron-3.jpg",
+    "retro5": "https://digitron.hr/images/retro-digitron-5.jpg",
+    "db812": "https://digitron.hr/images23/Digitron-db-812.jpg",
+    "van": "https://digitron.hr/images/servisno-vozilo-digitron.jpg",
+    "van2": "https://digitron.hr/images/dostavno-vozilo-digitron.jpg",
+    "approval_sticker": "https://digitron.hr/images/ovjera-vaga-21.jpg",
+    "outdoor_led": "https://digitron.hr/images/led-rasvjeta-digitron-1.jpg",
+    "stove": "https://digitron.hr/big/Venere-rosso.jpg",
+    "aircon": "https://digitron.hr/images/klima-uredjaj-digitron-0.jpg",
+    "scale_G310": "https://digitron.hr/vage/G310.jpg",
+    "scale_JCE": "https://digitron.hr/vage/JCE.jpg",
+    "lamp": "https://digitron.hr/led/led-rasvjeta-2.jpg"
+  },
+  "arhivski_pdfovi": {
+    "LED rasvjeta – cjenik 01.09.2022.": "https://digitron.hr/doc23/Cjenik-LED-rasvjete-Euro-01-09-2022.pdf",
+    "Peći na pelete – cjenik 25.01.2023.": "https://digitron.hr/doc23/Cjenik-peci-na-pelete-euro-kune-25-01-2023.pdf"
+  }
+}
